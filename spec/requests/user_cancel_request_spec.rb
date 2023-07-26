@@ -16,6 +16,8 @@ RSpec.describe '/users/:id/subscriptions/:id', type: :request do
       message = JSON.parse(response.body, symbolize_names: true)
 
       expect(message[:data][:message]).to eq("Successfully cancelled #{@sub1.title} subscription")
+      @user_sub1.reload
+      expect(@user_sub1.status).to eq('cancelled')
     end
   end
 end
