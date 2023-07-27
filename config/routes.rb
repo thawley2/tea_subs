@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       post "/users/:user_id/subscriptions/:subscription_id", to: "users/subscriptions#create"
+      patch "/users/:user_id/subscriptions/:subscription_id", to: "users/subscriptions#update"
     end
   end
 end
