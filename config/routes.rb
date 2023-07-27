@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v0 do
-      post "/users/:user_id/subscriptions/:subscription_id", to: "users/subscriptions#create"
-      patch "/users/:user_id/subscriptions/:subscription_id", to: "users/subscriptions#update"
+      namespace :users do
+        post "/:user_id/subscriptions/:subscription_id", to: "subscriptions#create"
+        patch "/:user_id/subscriptions/:subscription_id", to: "subscriptions#update"
+        get "/:id/subscriptions", to: "subscriptions#show"
+      end
     end
   end
 end
