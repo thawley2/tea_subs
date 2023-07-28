@@ -2,7 +2,7 @@ class Api::V0::Users::SubscriptionsController < ApplicationController
   before_action :find_subscription, only: [:create, :update]
   before_action :find_user_sub, only: [:update]
 
-  def show
+  def index
     user = User.find(params[:id])
     render json: SubscriptionSerializer.new(user.all_subs), status: 200
   end
