@@ -97,9 +97,21 @@ get {{domain}}/api/v0/users/:user_id/subscriptions
 ```
 git@github.com:thawley2/tea_subs.git
 ```
+2. Navigate into cloned repository run the following commands in your terminal
+  - Create database
+    ```rails db:{create,migrate,seed}```
+  - Install dependencies
+    ```bundle install```
+3. Run test suite to make sure everything was setup correctly
+  - ```bundle exec rspec```
+  - All tests should be passing
+4. Start up local server to test endpoints, in your terminal run ```rails s```
+  - Running the create database command also seeds the development database with fake information
+  - In Postman (or whichever API platform you use to test requests/responses), try the endpoints designed above
 
 
-
+## Created By:
+- Thomas Hawley |[Github](https://github.com/thawley2)| |[LinkedIn](https://www.linkedin.com/in/thomas-c-hawley/)|
 
 
 
